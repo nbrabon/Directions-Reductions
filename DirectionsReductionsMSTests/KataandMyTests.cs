@@ -6,7 +6,7 @@ using System.Globalization;
 namespace DirectionsReductionsMSTests
 {
     [TestClass]
-    public class UnitTest1
+    public class KataandMyTests
     {
         [TestMethod]
         public void KataTests1()
@@ -27,14 +27,16 @@ namespace DirectionsReductionsMSTests
         [TestMethod]
         public void TestNull()
         {
-            DirReduction.dirReduc(null);
+
+            Assert.IsNotNull(DirReduction.dirReduc(null));
+            
         }
 
         [TestMethod]
         public void TestEmptyArray()
         {
             string[] empty = Array.Empty<string>();
-            DirReduction.dirReduc(empty);
+            Assert.IsTrue(DirReduction.dirReduc(empty).Length == 0);
         }
 
     }
