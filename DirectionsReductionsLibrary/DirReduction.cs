@@ -24,19 +24,25 @@ namespace DirectionsReductionsLibrary
 
 		public static string[] dirReduc(String[] arr)
 		{
-			Dictionary<string, string> keysThatCancelOut = new Dictionary<string, string>();
-			keysThatCancelOut.Add("NORTH", "SOUTH");
-			keysThatCancelOut.Add("SOUTH", "NORTH");
-			keysThatCancelOut.Add("EAST", "WEST");
-			keysThatCancelOut.Add("WEST", "EAST");
-			List<string> al = new List<string>(arr);
+			if(arr == null || arr.Length == 0)
+            {
+				return Array.Empty<string>();
+            }
+            Dictionary<string, string> keysThatCancelOut = new Dictionary<string, string>
+            {
+                { "NORTH", "SOUTH" },
+                { "SOUTH", "NORTH" },
+                { "EAST", "WEST" },
+                { "WEST", "EAST" }
+            };
+            List<string> al = new List<string>(arr);
 
 			for (int i = 0; i < keysThatCancelOut.Count; i++)
 			{
 				bool removed = RemoveItem(keysThatCancelOut.ElementAt(i), al);
 				if (removed)
 				{
-					//start again 
+					//start at the begging again to re cancel out
 					i = 0;
 				}
 			}
