@@ -10,11 +10,10 @@ namespace DirectionsReductionsLibrary
 		public static bool RemoveItem(KeyValuePair<string, string> pairToRemove, List<string> items)
 		{
 			var indexOf = items.IndexOf(pairToRemove.Key);
-
+			//make sure that you can handle the case when you are at the end
 			if (indexOf > -1 && items.ElementAtOrDefault(indexOf + 1) == pairToRemove.Value)
 			{
-				//$"removed {items.ElementAt(indexOf)} {items.ElementAt(indexOf + 1)} ".Dump();
-
+				//Now remove current and next
 				items.RemoveRange(indexOf, 2);
 				//items.Dump();
 				return true;
@@ -28,6 +27,7 @@ namespace DirectionsReductionsLibrary
             {
 				return Array.Empty<string>();
             }
+			
             Dictionary<string, string> keysThatCancelOut = new Dictionary<string, string>
             {
                 { "NORTH", "SOUTH" },
@@ -42,11 +42,10 @@ namespace DirectionsReductionsLibrary
 				bool removed = RemoveItem(keysThatCancelOut.ElementAt(i), al);
 				if (removed)
 				{
-					//start at the begging again to re cancel out
+					//start at the beginning again to reveiw the duplicates
 					i = 0;
 				}
 			}
-
 
 			return al.ToArray();
 		}
