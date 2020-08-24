@@ -5,7 +5,12 @@ VisualStudioVersion = 16.0.30225.117
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DirectionsReductionsLibrary", "DirectionsReductionsLibrary\DirectionsReductionsLibrary.csproj", "{2C463B45-6056-498D-873A-666EE3A927E6}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DirectionsReductionsMSTests", "DirectionsReductionsMSTests\DirectionsReductionsMSTests.csproj", "{564BE089-C110-4CBD-81EC-DE7F6ED68B08}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DirectionsReductionsMSTests", "DirectionsReductionsMSTests\DirectionsReductionsMSTests.csproj", "{564BE089-C110-4CBD-81EC-DE7F6ED68B08}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{50FE2CFD-88EA-47BF-A564-448DC5F3D6A5}"
+	ProjectSection(SolutionItems) = preProject
+		Readme.txt = Readme.txt
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
